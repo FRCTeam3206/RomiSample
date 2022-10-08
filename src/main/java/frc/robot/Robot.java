@@ -91,11 +91,11 @@ public class Robot extends TimedRobot {
 
     // The getRawAxis method allows one to get the value an axis is on
     // We use axis to get stuff from the joysticks, as it is easy to represent a joystick
-    // like a coordinate grid, which allows us to just extract the height/side information from it.
-    double lspeed = -controller.getRawAxis(1);
-    double rspeed = -controller.getRawAxis(5);
+    // like a coordinate grid, which allows us to just extract the x or y axis information from it.
+    double forwardSpeed = -controller.getRawAxis(1);
+    double turnSpeed = -controller.getRawAxis(0);
 
-    m_drivetrain.tankDrive(lspeed, rspeed);
+    m_drivetrain.arcadeDrive(forwardSpeed, turnSpeed);
   }
 
   /** This function is called once when the robot is disabled. */
